@@ -60,8 +60,8 @@ std::ostream& operator<<(std::ostream& o, const BigInt& a){
     if (a.is_neg){
         o << '-';
     }
-    for (int i = 0; i < a.size(); i++ ){
-        o << a.value[i];
+    for (char i : a.value){
+        o << i;
     }
     return o;
 }
@@ -156,7 +156,7 @@ BigInt pow(const BigInt& base, const int& exp) {
 BigInt base_to_int(const std::string& str, int base){
     BigInt result = BigInt(0);
 
-    for(int i = 0; i < str.length(); i++){
+    for(unsigned int i = 0; i < str.length(); i++){
         BigInt add;
 
         if (i == 0)
@@ -164,7 +164,7 @@ BigInt base_to_int(const std::string& str, int base){
         else if ('0' <= str[i] && str[i] <= '9')
             add += BigInt(str[i] - '0') * pow(BigInt(base), i);
         else
-            add += BigInt((i - 'A') + 10);
+            add += BigInt((str[i] - 'A') + 10);
 
         result += add;
     }

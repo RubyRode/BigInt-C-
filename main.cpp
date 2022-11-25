@@ -187,8 +187,8 @@ int main()
     std::cout << "0" << endl;
     BigInt m("4");
     BigInt n("10");
-    BigInt res = m&n;
-    cout << "4&10 = 14" << "\nMy answer:";
+    BigInt res = m & n;
+    cout << "4 & 10 = 0" << "\nMy answer: ";
     cout << res << endl;
     return 0;
 }
