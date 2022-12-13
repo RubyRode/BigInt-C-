@@ -3,6 +3,10 @@
 #define OOP_BIGINT_H
 
 #include <string>
+#include <tuple>
+#include <algorithm>
+#include <cmath>
+#include <climits>
 #include <iostream>
 
 using namespace std;
